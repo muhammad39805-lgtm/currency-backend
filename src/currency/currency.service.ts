@@ -8,7 +8,7 @@ import { ConvertDto } from './dto/convert.dto';
 @Injectable()
 export class CurrencyService {
   private readonly API_KEY = process.env.CURRENCY_API_KEY;
-  private readonly BASE_URL = 'https://api.freecurrencyapi.com/v1';
+    private readonly BASE_URL = 'https://api.freecurrencyapi.com/v1';
 
   constructor(
     @InjectRepository(Conversion)

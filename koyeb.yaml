@@ -1,0 +1,20 @@
+name: currency-backend
+services:
+  - name: currency-backend-service
+    type: docker
+    description: Deployment of the currency-backend project
+    routes:
+      - name: currency-backend-route
+        port: 3000
+    docker:
+      image: "currency-backend:latest"
+      build:
+        context: .
+        dockerfile: Dockerfile
+    env:
+      - key: PORT
+        value: "3000"
+      - key: DB_PATH
+        value: "/data/database.sqlite"
+    regions:
+      - fra

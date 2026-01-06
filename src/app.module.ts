@@ -14,7 +14,7 @@ import { CurrencyModule } from './currency/currency.module';
     // }),
     TypeOrmModule.forRoot({
       type: 'sqlite',
-      database: process.env.DB_PATH || '/data/database.sqlite',
+      database: process.env.DB_PATH || './database.sqlite',
       autoLoadEntities: true,
       synchronize: true,
     }),

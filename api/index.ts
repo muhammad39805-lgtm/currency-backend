@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from '../src/app.module';
 import { ExpressAdapter } from '@nestjs/platform-express';
 import express from 'express';
+import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 const server = express();
 let cachedApp: any;
@@ -20,12 +21,7 @@ async function bootstrap() {
   return server;
 }
 
-// export default async function handler(req, res) {
-//   const app = await bootstrap();
-//   app(req, res);
-// }
-
-export default async function handler(req, res) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   const app = await bootstrap();
   app(req, res);
 }

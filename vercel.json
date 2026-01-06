@@ -1,27 +1,16 @@
-// {
-//   "version": 2,
-//   "builds": [
-//     {
-//       "src": "api/index.ts",
-//       "use": "@vercel/node@3",
-//       "config": { "nodeVersion": "22.x" }
-//     }
-//   ],
-//   "routes": [
-//     { "src": "/(.*)", "dest": "api/index.ts" }
-//   ]
-// }
-
-
 {
   "version": 2,
   "builds": [
     {
       "src": "api/index.ts",
-      "use": "@vercel/node@3"
+      "use": "@vercel/node@3",
+      "config": { "nodeVersion": "22.x" }
     }
   ],
   "routes": [
     { "src": "/(.*)", "dest": "api/index.ts" }
-  ]
+  ],
+  "env": {
+    "CURRENCY_API_KEY": "4E0VK7BnkdeUuh1vegAt808v2IUjzUR6lxcvBMT2"
+  }
 }

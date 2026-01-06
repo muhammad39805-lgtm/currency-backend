@@ -6,12 +6,19 @@ import { CurrencyModule } from './currency/currency.module';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
+    // TypeOrmModule.forRoot({
+    //   type: 'sqlite',
+    //   database: 'currency.db',
+    //   autoLoadEntities: true,
+    //   synchronize: true,
+    // }),
     TypeOrmModule.forRoot({
       type: 'sqlite',
-      database: 'currency.db',
+      database: process.env.DB_PATH || '/data/database.sqlite',
       autoLoadEntities: true,
-      synchronize: true, // dev only
+      synchronize: true,
     }),
+
     CurrencyModule,
   ],
 })
